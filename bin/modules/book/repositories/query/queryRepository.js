@@ -19,7 +19,7 @@ async function fetchBookBySubject(subject) {
     // define subjet-based url
     const subjectBasedUrl = generateSubjectBasedUrl(baseUrl, subject);
 
-    // make api call to external API
+    // return api call result
     return axios.get(subjectBasedUrl);
 }
 

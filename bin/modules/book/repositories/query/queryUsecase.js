@@ -20,8 +20,6 @@ class QueryUsecase {
 
             return wrapper.data(result)
         } catch (error) {
-            console.log("masuk ke gagal")
-            console.log(error)
             // handling error type from external API here
             if (error.response.status == 404) {
                 return wrapper.error(new NotFoundError("Books not found."))
