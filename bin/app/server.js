@@ -18,6 +18,7 @@ function AppServer() {
 
     // books endpoint
     this.server.get('/subjects', booksHandler.getAllBySubject);
+    this.server.post('/schedule', booksHandler.postBookSchedule);
 };
 
 module.exports = AppServer;
