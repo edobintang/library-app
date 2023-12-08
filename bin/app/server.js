@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 
+const booksHandler = require('../modules/book/handlers/http_handler');
+
 function AppServer() {
     // initiating server instance
     this.server = express();
@@ -13,6 +15,9 @@ function AppServer() {
     this.server.get('/', (req, res) => {
         res.send('Library Service is running!');
     });
+
+    // books endpoint
+    this.server.get('/subjects', booksHandler.getAllBySubject);
 };
 
 module.exports = AppServer;
